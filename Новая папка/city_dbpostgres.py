@@ -21,7 +21,8 @@ file_path = "./City_List.csv"
 # перевод данных из windows в utf и сохранить в новый файл
 with open("City_List.csv", mode='r', encoding='windows-1252') as infile:
     with open("City_List_utf8.csv", mode='w', encoding='utf-8', newline='') as outfile:
-
+        """Читаем CSV-файл в кодировке Windows-1252 старая версия для кириллицы.Создаем новый файл City_List_utf8.csv в 
+        кодировке UTF-8 и копируем данные построчно, чтобы избежать проблем с кодировкой."""
         reader = csv.reader(infile)
         writer = csv.writer(outfile)
         for row in reader:
