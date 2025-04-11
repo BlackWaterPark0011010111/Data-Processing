@@ -10,7 +10,9 @@ print("\nCUSTOM INDEX SERIES:")
 print(s)
 """
 Задача 1: Создайте Series с температурами за неделю (пн-вс)  Create Series with weekly temperatures (Mon-Sun)
+""""""сначала создаем два основных объекта в Pandas - Series  и DataFrame-  столбец и  таблица с названиями столбцов
 """
+
 #temps = pd.Series([22, 23, 21, 20, 19, 22, 24], 
 #                 index=['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'])
 
@@ -33,10 +35,10 @@ print(df)
 #df['Total'] = df['Price'] * df['Stock']
 
 #multi-condition selection множественный выбор
-
-
+#Выбираем товары по условиям
 print("\nEXPENSIVE ITEMS IN STOCK:")
-print(df[(df['Price'] > 500) & (df['Stock'] < 20)])
+print(df[(df['Price'] > 500) & 
+         (df['Stock'] < 20)])
 
 """
 Задача 3: Выберите товары с ценой < 500 И запасом > 25  ------ Select items with price < 500 AND stock > 25
@@ -65,6 +67,8 @@ sales = pd.DataFrame({
     'Sales': [250, 300, 200, 350]
 })
 print("\nGROUPBY EXAMPLE:")
+#cчитаем статистику по группам как сводные таблицы   Aggregate data like pivot tables:
+
 print(sales.groupby('Region').agg({'Sales': ['sum', 'mean']}))
 
 """
@@ -80,7 +84,7 @@ date_rng = pd.date_range(start='1/1/2023', end='1/08/2023', freq='D')
 ts_df = pd.DataFrame(date_rng, columns=['date'])
 ts_df['value'] = np.random.randint(0,100,size=(len(date_rng)))
 print("\nTIME SERIES EXAMPLE:")
-print(ts_df.head())
+print(ts_df.head())# Первые строки / First rows
 
 """
 Задача 6: Отфильтруйте только первые 3 дня января
@@ -150,6 +154,7 @@ temps = pd.DataFrame({
 })
 
 #calculate 7-day moving average
+#Анализируем данные по дням/неделям:
 temps['7_day_avg'] = temps['temperature'].rolling(window=7).mean()
 
 hottest_days = temps.nlargest(3, 'temperature')
@@ -208,7 +213,7 @@ print(customer_stats)
 
 
 print("\nData Inspection:")# always inspect data first
-print(sales.info())
+print(sales.info())# Типы данных / Data types
 print(sales.describe())
 
 sales['high_value'] = sales['revenue'] > 200  #vectorized operations instead of loops better than looping
