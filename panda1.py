@@ -28,7 +28,7 @@ print(df)
 """
 Задача 2: Добавьте столбец 'Total' (Price * Stock) ------- Add 'Total' column (Price * Stock)
 """
-
+ 
 
 #df['Total'] = df['Price'] * df['Stock']
 
