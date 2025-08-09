@@ -15,7 +15,7 @@ def foorloop(position=0):# func - added a default value to the arg
             print('dynamic coding',dict[key][position])
         print(type(dict[key]), value)
 
-
+ 
 def read(x):
     print('something ', x)
     
