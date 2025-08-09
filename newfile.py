@@ -24,7 +24,7 @@ read(dict['c'])
 list = [1,2,3,4,5,6,7,8,9,10]
 print(str(list))
 print(type(str(list)))
-
+ 
 list = [1,2,3,4,5,6,7,8,9,10]
 # list2=[f'{str(x)}0' for x in list]
 list2=[]
